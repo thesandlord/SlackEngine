@@ -19,11 +19,14 @@ api_version: 1
 handlers:
 - url: /
   script: index.php
+  secure: always
   
 - url: /(.+\.php)$
   script: \1
+  secure: always
 
 - url: /(.+\.(gif|png|jpg|css))$
   static_files: \1
   upload: .+\.(gif|png|jpg|css)$
   application_readable: true
+  secure: always

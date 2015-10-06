@@ -67,6 +67,7 @@ if($reply['ok']){
 			<div class="form">
 				<input type="email" class="form-item" placeholder="you@yourdomain.com" autofocus="true" id="mail">
 				<button class="button form-item" onclick="signup()" id="button"> Get my Invite </button>
+				<p class="muted"> <a href="https://<?php echo $name; ?>.slack.com">Already have an account? Click here to go to Slack.<a> </p>
 			</div>
 		</div>
 
