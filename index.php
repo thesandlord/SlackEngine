@@ -101,5 +101,5 @@ if($reply['ok']){
 		</script>
 
 	</body>
-	<footer>powered by <a href="https://github.com/thesandlord/SlackEngine" target="_blank">App Engine</a></footer>
+	<footer><a href="https://github.com/thesandlord/SlackEngine">SlackEngine</a>, powered by <a href="https://cloud.google.com/appengine/" target="_blank">App Engine</a></footer>
 </html>
