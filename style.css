@@ -58,8 +58,12 @@ footer a:visited{
 	color: #D6D6D6;
 }
 .muted{
-	font-size:0.7em;
+	font-size: 0.7em;
 }
 .muted a{
-	color:grey;
+	color: grey;
+}
+
+.note{
+	color: grey;
 }

@@ -23,6 +23,9 @@ With App Engine, you can run your slack inviter with the App Engine free tier an
 
 * Install the [App Engine SDK for PHP](https://cloud.google.com/appengine/downloads) if you don't have it.
 * Visit the [Google Developers Console](https://console.developers.google.com/project), and create a new project.
+* Visit [reCAPTCHA](https://www.google.com/recaptcha/admin), and register your website.
+* Install reCAPTCHA library with [Composer](https://getcomposer.org/)
+    * run ```composer install```
 * Edit [app.yaml](app.yaml)
     * Replace ```<PROJECT-ID>``` with the project ID you just created
 * Edit [constants.php](constants.php)
@@ -31,6 +34,9 @@ With App Engine, you can run your slack inviter with the App Engine free tier an
       * You can find your API token at api.slack.com/web
       * Note that the user you use to generate the token must be an admin.
       * You should create a dedicated @slackin-inviter user (or similar), mark that user an admin, and use a token from that dedicated admin user.
+      * Replace ```<YOUR-reCAPTCHA-SECRET>``` with your reCAPTCHA secret
+      * Replace ```<YOUR-reCAPTCHA-SITEKEY>``` with your reCAPTCHA site key
+      * Replace ```<YOUR-NOTE>``` with a small note you want to display
 * Launch your app:
     * Run ```appcfg.py update app.yaml .```
 
