@@ -13,9 +13,9 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 **/
-	define('SUBDOMAIN','<YOUR-SUBDOMAIN>');
-	define('TOKEN','<YOUR-API-TOKEN>');
-	define('SECRET', '<YOUR-reCAPTCHA-SECRET>');
-	define('SITEKEY', '<YOUR-reCAPTCHA-SITEKEY>');
-	define('NOTE', '<YOUR-NOTE>');
+  define('SUBDOMAIN','<YOUR-SUBDOMAIN>');
+  define('TOKEN','<YOUR-API-TOKEN>');
+  define('SECRET', '<YOUR-reCAPTCHA-SECRET>');
+  define('SITEKEY', '<YOUR-reCAPTCHA-SITEKEY>');
+  define('NOTE', '<YOUR-NOTE>');
 ?>

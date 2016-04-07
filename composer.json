@@ -1,5 +1,5 @@
 {
-	"require": {
-		"google/recaptcha": "~1.1"
-	}
+  "require": {
+    "google/recaptcha": "~1.1"
+  }
 }
