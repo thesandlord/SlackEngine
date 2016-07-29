@@ -59,7 +59,7 @@ if($reply['ok']){
       <div style="margin-bottom: 40px;">
         <img src="<?php echo $img; ?>" class="logo" />
         <span class="plus">+</span>
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/76/Slack_Icon.png" class="logo" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png" class="logo" />
       </div>
 
       <div style="margin:5px;">Join <b><?php echo $name; ?></b> on Slack.</div>
