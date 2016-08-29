@@ -69,7 +69,7 @@ if($reply['ok']){
       <form class="form" id="user_info" action="signup.php" method="POST">
         <input type="email" class="form-item" placeholder="you@yourdomain.com" autofocus="true" name="email">
         <button class="button form-item" id='button' type="submit"> Get my Invite </button>
-        <p class="muted"> <a href="https://<?php echo $name; ?>.slack.com">Already have an account? Click here to go to Slack.<a> </p>
+        <p class="muted"> <a href="https://<?php echo SUBDOMAIN; ?>.slack.com">Already have an account? Click here to go to Slack.<a> </p>
         <div class="g-recaptcha" data-sitekey="<?php echo SITEKEY; ?>"></div>
         <p class="muted note"> <b>Note:</b> <?php echo NOTE; ?></p>
       </form>
