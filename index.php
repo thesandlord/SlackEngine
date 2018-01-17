@@ -16,34 +16,43 @@
 
 include "constants.php";
 
-$slackUrl = 'https://'.SUBDOMAIN.'.slack.com/api/rtm.start?simple_latest=true&no_unreads=true&token='.TOKEN;
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $slackUrl);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$reply = json_decode(curl_exec($ch), true);
-curl_close($ch);
-
 // Set defaults
+$name = '';
+$img = '';
 $active = 0;
 $total = 0;
-$name = SUBDOMAIN;
-$img = "";
 
-// Get team data from slack
-if($reply['ok']){
+// If GETINFO is set to true in constants.php,
+// get the name and image from the Slack API
+if($GETINFO){
+  $slackUrl = 'https://'.SUBDOMAIN.'.slack.com/api/rtm.start?simple_latest=true&no_unreads=true&token='.TOKEN;
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $slackUrl);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $reply = json_decode(curl_exec($ch), true);
+  curl_close($ch);
 
-  $img = $reply['team']['icon']['image_68'];
-  $name = $reply['team']['name'];
+  // Get team data from slack
+  if($reply['ok']){
 
-  foreach($reply['users'] as $val) {
+    $img = $reply['team']['icon']['image_68'];
+    $name = $reply['team']['name'];
 
-    $total = $total + 1;
-    if('active' == $val['presence']) {
-      $active = $active + 1;
-    }  
+    foreach($reply['users'] as $val) {
+
+      $total = $total + 1;
+      if('active' == $val['presence']) {
+        $active = $active + 1;
+      }
+    }
   }
+} else {
+  $name = NAME;
+  $img = IMAGE;
 }
+
 ?>
+
 <html>
   <head>
     <title>Join <?php echo $name; ?> on Slack!</title>
@@ -64,7 +73,20 @@ if($reply['ok']){
 
       <div style="margin:5px;">Join <b><?php echo $name; ?></b> on Slack.</div>
 
-      <div style="margin:5px;"> <b style="color: #E01563;"><?php echo $active;?></b> users online now of <b><?php echo $total; ?></b> registered.</div>
+      <?php
+        // Display Active User Counts if GETINFO is active
+        if($GETINFO){
+          echo '<div style="margin:5px;"> <b style="color: #E01563;">';
+          echo $active;
+          echo '</b> users online now of <b>';
+          echo $total;
+          echo '</b> registered.</div>';
+        } else {
+          echo '<div style="margin:5px;"> Join over <b>';
+          echo USERCOUNT;
+          echo '+</b> users.';
+        }
+      ?>
 
       <form class="form" id="user_info" action="signup.php" method="POST">
         <input type="email" class="form-item" placeholder="you@yourdomain.com" autofocus="true" name="email">
@@ -97,7 +119,7 @@ if($reply['ok']){
           button.style.background = "#F4001E";
           button.innerHTML = "Backend Failure"
         });
-      });    
+      });
     </script>
 
   </body>

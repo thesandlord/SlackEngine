@@ -18,4 +18,8 @@
   define('SECRET', '<YOUR-reCAPTCHA-SECRET>');
   define('SITEKEY', '<YOUR-reCAPTCHA-SITEKEY>');
   define('NOTE', '<YOUR-NOTE>');
+  $GETINFO = true;
+  define('IMAGE', '<YOUR-COMMUNITY-IMAGE>');
+  define('NAME', '<YOUR-COMMUNITY-NAME>');
+  define('USERCOUNT', '<YOUR-COMMUNITY-USERCOUNT>');
 ?>

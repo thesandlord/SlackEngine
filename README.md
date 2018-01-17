@@ -13,15 +13,15 @@ It provides
 
 Most Slack inviters require you to run a server 24/7 to work. However, most users will visit the app once and never come back to it!
 
-With App Engine, you can run your Slack inviter with the App Engine free tier and never worry about it again! If your community starts to recieve a lot of traffic, App Engine will automatically scale to handle the load as well.
+With App Engine, you can run your Slack inviter with the App Engine free tier and never worry about it again! If your community starts to receive a lot of traffic, App Engine will automatically scale to handle the load as well.
 
-[Slackin](http://rauchg.com/slackin) is my favorite Slack inviter, but won't run on App Engine without using [custom runtimes](https://cloud.google.com/appengine/docs/managed-vms/custom-runtimes). So SlackEngine was born!
+[Slackin](http://rauchg.com/slackin) is my favorite Slack inviter, but won't run on App Engine without using [the Flexible environment](https://cloud.google.com/appengine/docs/flexible/). So SlackEngine was born!
 
 ## How to use
 
 ### Setup
 
-* Install the [App Engine SDK for PHP](https://cloud.google.com/appengine/downloads) if you don't have it.
+* Install the [App Engine SDK for PHP](https://cloud.google.com/appengine/docs/standard/php/download) if you don't have it.
 * Visit the [Google Developers Console](https://console.developers.google.com/project), and create a new project.
 * Visit [reCAPTCHA](https://www.google.com/recaptcha/admin), and register your website.
 * Install reCAPTCHA library with [Composer](https://getcomposer.org/)
@@ -37,8 +37,14 @@ With App Engine, you can run your Slack inviter with the App Engine free tier an
       * Replace `<YOUR-reCAPTCHA-SECRET>` with your reCAPTCHA secret
       * Replace `<YOUR-reCAPTCHA-SITEKEY>` with your reCAPTCHA site key
       * Replace `<YOUR-NOTE>` with a small note you want to display
+      * _Optional_
+        * By default, `$GETINFO` is set to 'true', so SlackEngine will query the Slack API to get the following values. However, this can impact performance once your community goes above 5000 users. You can instead set `$GETINFO` to 'false' and define the following constants:
+        * Replace `<<YOUR-COMMUNITY-IMAGE>` with the URL of a square image representing your community.
+        * Replace `<<YOUR-COMMUNITY-NAME>` with the name of your community.
+        * Replace `<<YOUR-COMMUNITY-USERCOUNT>>` with the approximate number of users in your community.
 * Launch your app:
-    * Run `appcfg.py update app.yaml .`
+    * Run `gcloud init` to select your project
+    * Run `gcloud app deploy` to deploy to App Engine
 
 ### Credits
 
