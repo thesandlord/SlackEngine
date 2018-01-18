@@ -13,6 +13,7 @@
 #
 runtime: php55
 api_version: 1
+instance_class: F1
 
 handlers:
 - url: /
