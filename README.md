@@ -31,7 +31,7 @@ With App Engine, you can run your Slack inviter with the App Engine free tier an
 * Edit [constants.php](constants.php)
     * Replace `<YOUR-SUBDOMAIN>` with your team's Slack subdomain, e.g., if your Slack is `myteam.slack.com`, your subdomain is `myteam`
     * Replace `<YOUR-API-TOKEN>` with your Slack API token
-      * You can find your API token at https://api.slack.com/web
+      * You can find your API token at https://api.slack.com/custom-integrations/legacy-tokens
       * Note that the user you use to generate the token must be an admin.
       * You should create a dedicated @slackin-inviter user (or similar), mark that user an admin, and use a token from that dedicated admin user.
       * Replace `<YOUR-reCAPTCHA-SECRET>` with your reCAPTCHA secret
