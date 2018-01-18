@@ -26,6 +26,8 @@ With App Engine, you can run your Slack inviter with the App Engine free tier an
 * Visit [reCAPTCHA](https://www.google.com/recaptcha/admin), and register your website.
 * Install reCAPTCHA library with [Composer](https://getcomposer.org/)
     * run `composer install`
+* Rename `constants.php.example` to `constants.php`
+  * Run: `mv constants.php.example constants.php`
 * Edit [constants.php](constants.php)
     * Replace `<YOUR-SUBDOMAIN>` with your team's Slack subdomain, e.g., if your Slack is `myteam.slack.com`, your subdomain is `myteam`
     * Replace `<YOUR-API-TOKEN>` with your Slack API token
